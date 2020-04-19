@@ -1,0 +1,20 @@
+{
+    "name": "sgoettsch/monolog-rotating-file-handler",
+    "description": "Rotating File Handler for Monolog library",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["monolog"],
+    "authors": [
+        {
+            "name": "Sebastian Goettsch"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "sgoettsch\\monologRotatingFileHandler\\": "src"
+        }
+    },
+    "require": {
+        "monolog/monolog": "^1.20"
+    }
+}
