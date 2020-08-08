@@ -3,7 +3,9 @@
     "description": "Rotating File Handler for Monolog library",
     "type": "library",
     "license": "MIT",
-    "keywords": ["monolog"],
+    "keywords": [
+        "monolog"
+    ],
     "authors": [
         {
             "name": "Sebastian Goettsch"
