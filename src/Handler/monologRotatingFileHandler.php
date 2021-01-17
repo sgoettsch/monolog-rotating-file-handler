@@ -93,6 +93,7 @@ class monologRotatingFileHandler extends StreamHandler
         // archive older files
         for ($i = $this->maxFiles - 1; $i >= 1; $i--) {
             $source = $this->filename . '.' . $i;
+            clearstatcache(true, $source);
             if (file_exists($source)) {
                 $target = $this->filename . '.' . ($i + 1);
 
@@ -101,6 +102,7 @@ class monologRotatingFileHandler extends StreamHandler
         }
 
         // archive latest file
+        clearstatcache(true, $this->filename);
         if (file_exists($this->filename)) {
             $target = $this->filename . '.1';
 
