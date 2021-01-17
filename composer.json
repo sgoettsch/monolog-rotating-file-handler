@@ -17,6 +17,6 @@
         }
     },
     "require": {
-        "monolog/monolog": "1 - 2"
+        "monolog/monolog": "~2.0.0"
     }
 }
