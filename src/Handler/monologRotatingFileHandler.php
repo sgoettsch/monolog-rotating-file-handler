@@ -2,6 +2,7 @@
 
 namespace sgoettsch\monologRotatingFileHandler\Handler;
 
+use Exception;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -106,8 +107,8 @@ class monologRotatingFileHandler extends StreamHandler
         clearstatcache(true, $this->filename);
         if (file_exists($this->filename)) {
             $target = $this->filename . '.1';
-
-            rename($this->filename, $target);
+            copy($this->filename, $target);
+            file_put_contents($this->filename, '');
         }
 
         $this->mustRotate = false;
