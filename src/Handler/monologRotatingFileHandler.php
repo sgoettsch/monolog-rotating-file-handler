@@ -2,6 +2,7 @@
 
 namespace sgoettsch\monologRotatingFileHandler\Handler;
 
+use Exception;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
@@ -10,21 +11,21 @@ use Monolog\Logger;
  */
 class monologRotatingFileHandler extends StreamHandler
 {
-    protected $filename;
-    protected $maxFiles;
-    protected $maxFileSize;
-    protected $mustRotate;
+    protected string $filename;
+    protected int $maxFiles;
+    protected int $maxFileSize;
+    protected bool $mustRotate;
 
     /**
      * @param string $filename
      * @param int $maxFiles The maximal amount of files to keep (0 means unlimited)
      * @param int $maxFileSize The maximal file size (default 10MB)
-     * @param int $level The minimum logging level at which this handler will be triggered
+     * @param int|string $level The minimum logging level at which this handler will be triggered
      * @param bool $bubble Whether the messages that are handled can bubble up the stack or not
      * @param int|null $filePermission Optional file permissions (default (0644) are only for owner read/write)
      * @param bool $useLocking Try to lock log file before doing any writes
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function __construct($filename, $maxFiles = 10, $maxFileSize = 10485760, $level = Logger::DEBUG, $bubble = true, $filePermission = null, $useLocking = false)
     {
@@ -84,7 +85,7 @@ class monologRotatingFileHandler extends StreamHandler
     /**
      * Rotates the files.
      */
-    protected function rotate()
+    protected function rotate(): void
     {
         // skip GC of old logs if file size is unlimited
         if ($this->maxFileSize === 0) {
