@@ -10,7 +10,7 @@ jobs:
       image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:72e57410e0d36bda69c57b8633e80013df00c11f00fad8988188d3ec4e2c2c33
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Composer
         run: composer install
