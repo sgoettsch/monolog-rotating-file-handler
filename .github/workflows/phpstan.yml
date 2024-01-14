@@ -7,7 +7,7 @@ jobs:
   phpstan:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1
+      image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:2e0ca88efe1357f6d9f5801750baac78ae5007a093b9a9e1bc143aafbcdc7979
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -16,6 +16,6 @@ jobs:
         run: composer install
 
       - name: PHPStan
-        uses: docker://ghcr.io/sgoettsch/docker-phpstan:latest-php8.1
+        uses: docker://ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:2e0ca88efe1357f6d9f5801750baac78ae5007a093b9a9e1bc143aafbcdc7979
         with:
           args: analyze --error-format=table /github/workspace
