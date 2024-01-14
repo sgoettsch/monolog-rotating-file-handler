@@ -5,6 +5,7 @@ namespace sgoettsch\monologRotatingFileHandler\Handler;
 use Exception;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Monolog\LogRecord;
 
 /**
  * Stores logs to files that are rotated based on file size with a maximum file amount.
@@ -55,7 +56,7 @@ class monologRotatingFileHandler extends StreamHandler
     /**
      * {@inheritdoc}
      */
-    public function reset()
+    public function reset(): void
     {
         parent::reset();
 
@@ -67,7 +68,7 @@ class monologRotatingFileHandler extends StreamHandler
     /**
      * {@inheritdoc}
      */
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         clearstatcache(true, $this->filename);
 
