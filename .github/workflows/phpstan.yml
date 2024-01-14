@@ -18,4 +18,6 @@ jobs:
         run: composer install
 
       - name: PHPStan
-        run: analyse /app
+        uses: docker://ghcr.io/sgoettsch/docker-phpstan:latest-php8.1
+        with:
+          args: analyze --error-format=table /app
