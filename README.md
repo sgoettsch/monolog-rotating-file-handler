@@ -15,14 +15,14 @@ $ composer require sgoettsch/monolog-rotating-file-handler
 ```php
 <?php
 
-use sgoettsch\monologRotatingFileHandler\Handler\monologRotatingFileHandler;
+use sgoettsch\MonologRotatingFileHandler\Handler\MonologRotatingFileHandler;
 use Monolog\Logger;
 
 // path to log file
 $filename = 'app.log';
 
 // Instantiate handler
-$handler = new monologRotatingFileHandler($filename);
+$handler = new MonologRotatingFileHandler($filename);
 
 // Create a log channel
 $log = new Logger('name');

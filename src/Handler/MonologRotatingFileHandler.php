@@ -1,16 +1,16 @@
 <?php
 
-namespace sgoettsch\monologRotatingFileHandler\Handler;
+namespace sgoettsch\MonologRotatingFileHandler\Handler;
 
 use Exception;
 use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use Monolog\Level;
 use Monolog\LogRecord;
 
 /**
  * Stores logs to files that are rotated based on file size with a maximum file amount.
  */
-class monologRotatingFileHandler extends StreamHandler
+class MonologRotatingFileHandler extends StreamHandler
 {
     protected string $filename;
     protected int $maxFiles;
@@ -21,15 +21,25 @@ class monologRotatingFileHandler extends StreamHandler
      * @param string $filename
      * @param int $maxFiles The maximal amount of files to keep (0 means unlimited)
      * @param int $maxFileSize The maximal file size (default 10MB)
-     * @param int|string $level The minimum logging level at which this handler will be triggered
+     * phpcs:ignore
+     * @param 100|200|250|300|400|500|550|600|'ALERT'|'alert'|'CRITICAL'|'critical'|'DEBUG'|'debug'|'EMERGENCY'|'emergency'|'ERROR'|'error'|'INFO'|'info'|'NOTICE'|'notice'|'WARNING'|'warning'|\Monolog\Level $level
      * @param bool $bubble Whether the messages that are handled can bubble up the stack or not
      * @param int|null $filePermission Optional file permissions (default (0644) are only for owner read/write)
      * @param bool $useLocking Try to lock log file before doing any writes
      *
      * @throws Exception
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
-    public function __construct($filename, $maxFiles = 10, $maxFileSize = 10485760, $level = Logger::DEBUG, $bubble = true, $filePermission = null, $useLocking = false)
-    {
+    public function __construct(
+        $filename,
+        $maxFiles = 10,
+        $maxFileSize = 10485760,
+        int|string|Level $level = Level::Debug,
+        bool $bubble = true,
+        int $filePermission = null,
+        bool $useLocking = false
+    ) {
         $this->filename = $filename;
         $this->maxFiles = (int)$maxFiles;
         $this->maxFileSize = (int)$maxFileSize;
