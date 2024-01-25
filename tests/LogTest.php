@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace sgoettsch\monologRotatingFileHandler\Test;
 
 use Monolog\Logger;
-use sgoettsch\monologRotatingFileHandler\Handler\monologRotatingFileHandler;
+use sgoettsch\MonologRotatingFileHandler\Handler\MonologRotatingFileHandler;
 
 class LogTest extends \PHPUnit\Framework\TestCase
 {
