@@ -22,7 +22,7 @@ use Monolog\Logger;
 $filename = 'app.log';
 
 // Instantiate handler
-$handler = new monologRotatingFileHandler($filename);
+$handler = new MonologRotatingFileHandler($filename);
 
 // Create a log channel
 $log = new Logger('name');

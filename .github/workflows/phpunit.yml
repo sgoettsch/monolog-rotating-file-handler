@@ -1,10 +1,10 @@
-name: PHPStan
+name: PHPUnit
 
 on:
   pull_request:
 
 jobs:
-  phpstan:
+  phpunit:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:714c8d3385827c9dc172b159cb10d28f96ddaf2c89db834eaa71d7ecea56369a
@@ -15,7 +15,5 @@ jobs:
       - name: Composer
         run: composer install
 
-      - name: PHPStan
-        uses: docker://ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:714c8d3385827c9dc172b159cb10d28f96ddaf2c89db834eaa71d7ecea56369a
-        with:
-          args: analyze --error-format=table /github/workspace
+      - name: PHPUnit
+        run: composer test

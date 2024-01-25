@@ -7,11 +7,7 @@ parameters:
 	excludePaths:
 	    analyse:
 	        - ./vendor/*
+	        - ./tests/*
 
 	scanDirectories:
 	    - ./vendor/
-
-	ignoreErrors:
-		-
-			message: '#Parameter \#2 \$level of method*#'
-			path: src/Handler/monologRotatingFileHandler.php
