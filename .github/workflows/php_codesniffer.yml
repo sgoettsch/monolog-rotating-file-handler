@@ -7,7 +7,7 @@ jobs:
   phpcs:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:7704cd4f9ff837335e3b161fddef9ba8fe753fdbdb2e541cf9138adfb3e91d00
+      image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:9921e1ee07f89997cc23b5de73223f767f886229ecbf4c0dec877d6da4bbae2b
     steps:
       - name: Checkout
         uses: actions/checkout@v4
