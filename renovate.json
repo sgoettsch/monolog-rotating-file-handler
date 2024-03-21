@@ -3,7 +3,9 @@
   "extends": [
     "config:recommended",
     "docker:pinDigests",
-    ":disableDependencyDashboard"
+    ":disableDependencyDashboard",
+    "helpers:pinGitHubActionDigests",
+    "regexManagers:dockerfileVersions"
   ],
   "baseBranches": [
     "master"
@@ -14,5 +16,14 @@
   "useBaseBranchConfig": "merge",
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
-  "dependencyDashboard": false
+  "dependencyDashboard": false,
+  "separateMinorPatch": true,
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["pin", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
 }
