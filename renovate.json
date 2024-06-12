@@ -19,9 +19,10 @@
   "dependencyDashboard": false,
   "separateMinorPatch": true,
   "platformAutomerge": true,
+  "automergeType": "branch",
   "packageRules": [
     {
-      "matchUpdateTypes": ["pin", "digest"],
+      "matchUpdateTypes": ["pin", "digest", "pinDigest"],
       "automerge": true,
       "automergeType": "branch"
     }
