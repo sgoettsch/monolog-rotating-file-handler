@@ -29,7 +29,7 @@ class MonologRotatingFileHandler extends StreamHandler
      *
      * @throws Exception
      *
-     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     * @SuppressWarnings("BooleanArgumentFlag")
      */
     public function __construct(
         $filename,
