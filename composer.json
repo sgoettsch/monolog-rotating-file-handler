@@ -22,7 +22,7 @@
     },
     "require-dev": {
         "phpmd/phpmd": "^2.5",
-        "phpunit/phpunit": "^10",
+        "phpunit/phpunit": "^11",
         "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
