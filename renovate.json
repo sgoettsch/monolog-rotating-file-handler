@@ -22,9 +22,19 @@
   "automergeType": "branch",
   "packageRules": [
     {
-      "matchUpdateTypes": ["pin", "digest", "pinDigest"],
+      "matchUpdateTypes": [
+        "pin",
+        "digest",
+        "pinDigest"
+      ],
       "automerge": true,
       "automergeType": "branch"
+    },
+    {
+      "matchPackagePatterns": [
+        "^phpunit"
+      ],
+      "allowedVersions": "<11"
     }
   ]
 }
