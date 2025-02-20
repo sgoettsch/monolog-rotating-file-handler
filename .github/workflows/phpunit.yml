@@ -11,7 +11,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:02e492eaf04b40adfe185aa799f30b8f3f825e0fe92cf013595dad0860ac15bb
+      image: ghcr.io/sgoettsch/docker-phpstan:latest-php8.1@sha256:139067ebaf26af0c314d3cc58923f2ea06420a3edff79d40d1774bd9122f4bd2
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
