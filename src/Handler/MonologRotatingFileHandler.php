@@ -37,7 +37,7 @@ class MonologRotatingFileHandler extends StreamHandler
         $maxFileSize = 10485760,
         int|string|Level $level = Level::Debug,
         bool $bubble = true,
-        int $filePermission = null,
+        ?int $filePermission = null,
         bool $useLocking = false
     ) {
         $this->filename = $filename;
