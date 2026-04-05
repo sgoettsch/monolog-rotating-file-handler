@@ -15,7 +15,7 @@ class MonologRotatingFileHandler extends StreamHandler
     protected string $filename;
     protected int $maxFiles;
     protected int $maxFileSize;
-    protected bool $mustRotate;
+    protected bool $mustRotate = false;
 
     /**
      * @param string $filename
